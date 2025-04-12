@@ -40,32 +40,31 @@ export default async function Page({
           className="absolute inset-0 w-full aspect-[12/4.5] object-cover rounded-lg"
           alt={data.title}
         />
-        <div className="absolute bottom-2 left-2 w-1/2 h-1/3  min-h-max bg-white/40 backdrop-filter backdrop-blur-md rounded-md p-6">
+        <div className="absolute bottom-0 left-0 w-full sm:bottom-2 sm:left-2 md:w-1/2 h-1/3  min-h-max bg-white/40 backdrop-filter backdrop-blur-md rounded-md p-2 sm:p-6 text-black">
           <div>
-            <h2 className="text-4xl tracking-tight font-bold mb-4">
+            <h2 className="sm:text-4xl tracking-tight font-bold sm:mb-4">
               {data.title}
             </h2>
-            <div className="flex gap-1 mb-2">
+            <div className="hidden sm:flex gap-1 mb-2">
               <span>{data.type}</span> <Dot /> <span>{data.year}</span> <Dot />{" "}
               <span>⭐️ {data.score}</span> <Dot /> <span>{data.rating}</span>
             </div>
-            <div className="mb-3">
+            <div className="hidden sm:flex gap-1 mb-3">
               <span className="font-medium">Genre: </span>
               <span>
                 {data.genres.map((item) => item.name).join(", ")}
               </span>{" "}
             </div>
             {type === "anime" && (
-              <div className="flex gap-3">
+              <div className="hidden sm:flex gap-2 flex-wrap w-full">
                 {data.streaming.map((stream, idx) => (
                   <a
                     href={stream.url}
-                    className="cursor-pointer"
                     key={idx}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Button>{stream.name}</Button>
+                    <Button className="cursor-pointer">{stream.name}</Button>
                   </a>
                 ))}
               </div>
@@ -88,7 +87,7 @@ export default async function Page({
       )}
       <div>
         <h3 className="text-xl font-semibold mb-2">Characters</h3>
-        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-10 gap-2">
+        <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-10 gap-2">
           {characters.map((character, idx) => (
             <div className="relative overflow-hidden rounded-md" key={idx}>
               <img
@@ -96,7 +95,7 @@ export default async function Page({
                 alt={character.character.name}
                 className="rounded-md w-full object-cover aspect-[1/1.5]"
               />
-              <div className="absolute w-full left-0 bottom-0 bg-indigo-950 text-white text-center rounded-xs p-2 h-[36px]">
+              <div className="absolute w-full left-0 bottom-0 bg-purple-600 text-white text-center rounded-xs p-2 h-[36px]">
                 <span>{character.character.name}</span>
               </div>
             </div>

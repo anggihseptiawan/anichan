@@ -33,7 +33,7 @@ export default async function Home({
     <div className="space-y-8">
       <div>
         <div className="flex justify-between">
-          <h1 className="capitalize text-2xl font-semibold mb-2">
+          <h1 className="capitalize text-xl sm:text-2xl font-semibold mb-2">
             {animeSeasonList.data[0].season} {animeSeasonList.data[0].year}{" "}
             Anime
           </h1>
@@ -47,7 +47,9 @@ export default async function Home({
       </div>
       <div>
         <div className="flex justify-between">
-          <h1 className="capitalize text-2xl font-semibold mb-2">Manga</h1>
+          <h1 className="capitalize text-xl sm:text-2xl font-semibold mb-2">
+            Manga
+          </h1>
         </div>
         <Card list={mangaList.data} isManga />
         <PaginationList

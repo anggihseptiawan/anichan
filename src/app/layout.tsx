@@ -25,7 +25,9 @@ export default function RootLayout({
         className={`${inter.variable} font-[family-name:var(--font-inter)]`}
       >
         <Navbar />
-        <main className="p-8 pt-4 min-h-[55vh]">{children}</main>
+        <main className="p-8 pt-4 min-h-[55vh] bg-[#16042f] text-white">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -18,7 +18,7 @@ export const Card = ({
               className="w-full aspect-[3/4.6] object-cover rounded-sm mb-2"
               alt={item.title}
             />
-            <figcaption className="text-lg tracking-tight">
+            <figcaption className="text-lg tracking-tight leading-6">
               {item.title}
             </figcaption>
           </figure>

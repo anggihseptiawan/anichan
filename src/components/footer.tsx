@@ -8,12 +8,11 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <Link
               href="/"
-              className="text-2xl font-bold mb-4 flex items-center"
+              className="text-2xl font-bold tracking-tight text-purple-500"
             >
-              <span className="text-anime-secondary">Ani</span>
-              <span className="text-anime-accent">chan</span>
+              <span>Anichan</span>
             </Link>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-400 mb-4 mt-2">
               Your ultimate destination for anime streaming. Watch the latest
               episodes of your favorite shows, discover new series, and join our
               community of anime lovers.
@@ -55,7 +54,7 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/faq"
+                  href="/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   FAQ
@@ -63,7 +62,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Contact Us
@@ -71,7 +70,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/privacy"
+                  href="/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Privacy Policy
@@ -79,7 +78,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href="/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Terms of Service
@@ -89,7 +88,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Anichan. All rights reserved.</p>
         </div>
       </div>
