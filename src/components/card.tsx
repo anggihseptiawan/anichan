@@ -8,7 +8,7 @@ export const Card = ({
   list: AnimeDetail[]
   isManga?: boolean
 }) => (
-  <div className="mb-6">
+  <div className="mb-2">
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
       {list.map((item, idx) => (
         <Link href={`/${isManga ? "manga" : "anime"}/${item.mal_id}`} key={idx}>
