@@ -1,4 +1,3 @@
-import { Facebook, Twitter, Instagram, Youtube } from "lucide-react"
 import Link from "next/link"
 
 export const Footer = () => {
@@ -6,7 +5,6 @@ export const Footer = () => {
     <footer className="bg-indigo-950 text-white py-10 px-8">
       <div className="container mx-auhref px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <Link
               href="/"
@@ -20,74 +18,38 @@ export const Footer = () => {
               episodes of your favorite shows, discover new series, and join our
               community of anime lovers.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Youtube size={20} />
-              </a>
-            </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/"
+                  href="/genre"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Home
+                  Genre
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/browse"
+                  href="/schedule"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Browse
+                  Schedule
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/genres"
+                  href="/season"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Genres
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/upcoming"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Upcoming
+                  Season
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Support */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">

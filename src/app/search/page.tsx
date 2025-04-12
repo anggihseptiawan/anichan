@@ -1,6 +1,7 @@
 import { Card } from "~/components/card"
 import { http } from "~/lib/http"
-import { AnimeDetail, APIResponse } from "~/types/api"
+import type { APIResponse } from "~/types/api"
+import type { AnimeDetail } from "~/types/anime"
 import { tryCatch } from "~/utils/tryCatch"
 
 export default async function Search({

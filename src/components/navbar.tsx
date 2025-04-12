@@ -18,8 +18,6 @@ export const Navbar = () => (
       </Link>
       <nav className="flex gap-4">
         <Link href="/genre">Genre</Link>
-        <Link href="/recommendation">Recommendation</Link>
-        <Link href="/review">Review</Link>
         <Link href="/schedule">Schedule</Link>
         <Link href="/season">Season</Link>
       </nav>

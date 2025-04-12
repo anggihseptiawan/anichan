@@ -1,7 +1,8 @@
 import Link from "next/link"
 import { Card } from "~/components/card"
 import { http } from "~/lib/http"
-import { AnimeDetail, APIResponse } from "~/types/api"
+import type { APIResponse } from "~/types/api"
+import type { AnimeDetail } from "~/types/anime"
 import { tryCatch } from "~/utils/tryCatch"
 
 export default async function Home() {
@@ -12,7 +13,11 @@ export default async function Home() {
   )
   const { data: mangaList, error: errorMangaList } = await tryCatch<
     AnimeDetail[]
-  >(http<APIResponse<AnimeDetail[]>>("manga?limit=5").then((r) => r.data.data))
+  >(
+    http<APIResponse<AnimeDetail[]>>("/top/manga?limit=5").then(
+      (r) => r.data.data
+    )
+  )
   if (error || errorMangaList) return <p>Error!</p>
 
   return (
@@ -31,7 +36,7 @@ export default async function Home() {
           <h1 className="capitalize text-2xl font-semibold mb-2">Manga</h1>
           <Link href="/season">View All</Link>
         </div>
-        <Card list={mangaList} />
+        <Card list={mangaList} isManga />
       </div>
     </div>
   )
