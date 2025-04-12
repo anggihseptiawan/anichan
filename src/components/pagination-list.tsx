@@ -50,23 +50,25 @@ export const PaginationList = ({
           ))}
         </div>
       </PaginationItem>
-      <PaginationItem>
-        <div className="flex gap-1">
-          {new Array(Math.min(last, 3)).fill(0).map((_, idx) => (
-            <Form action="/" key={idx}>
-              <input type="hidden" name="type" value={type} />
-              <div>
-                <input type="hidden" name="page" value={idx + page + 1} />
-                <PaginationLink isActive={page === idx + page + 1}>
-                  <button className="cursor-pointer" type="submit">
-                    {idx + page + 1}
-                  </button>
-                </PaginationLink>
-              </div>
-            </Form>
-          ))}
-        </div>
-      </PaginationItem>
+      {page > 3 && (
+        <PaginationItem>
+          <div className="flex gap-1">
+            {new Array(Math.min(last, 2)).fill(0).map((_, idx) => (
+              <Form action="/" key={idx}>
+                <input type="hidden" name="type" value={type} />
+                <div>
+                  <input type="hidden" name="page" value={idx + page + 1} />
+                  <PaginationLink isActive={page === idx + page + 1}>
+                    <button className="cursor-pointer" type="submit">
+                      {idx + page + 1}
+                    </button>
+                  </PaginationLink>
+                </div>
+              </Form>
+            ))}
+          </div>
+        </PaginationItem>
+      )}
       <PaginationItem>
         <Form action="/">
           <input type="hidden" name="type" value={type} />
