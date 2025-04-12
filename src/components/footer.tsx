@@ -8,7 +8,7 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <Link
               href="/"
-              className="text-2xl font-bold tracking-tight text-purple-500"
+              className="text-2xl font-bold tracking-tight text-primary"
             >
               <span>Anichan</span>
             </Link>

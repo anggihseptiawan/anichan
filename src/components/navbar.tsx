@@ -43,7 +43,7 @@ export const Navbar = () => (
   <div className="flex justify-between items-center px-8 py-4 bg-[#16042f] text-white">
     <div className="flex gap-12">
       <Link href="/">
-        <span className="text-xl font-bold tracking-tight text-purple-500">
+        <span className="text-xl font-bold tracking-tight text-primary">
           Anichan
         </span>
       </Link>

@@ -17,12 +17,12 @@ export const PaginationList = ({
   type: "anime" | "manga"
 }) => (
   <Pagination>
-    <PaginationContent>
+    <PaginationContent className="flex flex-wrap">
       <PaginationItem>
         <Form action="/">
           <input type="hidden" name="type" value={type} />
           <input type="hidden" name="page" value={1} />
-          <Button type="submit" variant="secondary" className="cursor-pointer">
+          <Button type="submit" variant="outline" className="cursor-pointer">
             First
           </Button>
         </Form>
@@ -50,30 +50,28 @@ export const PaginationList = ({
           ))}
         </div>
       </PaginationItem>
-      {page > 3 && (
-        <PaginationItem>
-          <div className="flex gap-1">
-            {new Array(Math.min(last, 3)).fill(0).map((_, idx) => (
-              <Form action="/" key={idx}>
-                <input type="hidden" name="type" value={type} />
-                <div>
-                  <input type="hidden" name="page" value={idx + page + 1} />
-                  <PaginationLink isActive={page === idx + page + 1}>
-                    <button className="cursor-pointer" type="submit">
-                      {idx + page + 1}
-                    </button>
-                  </PaginationLink>
-                </div>
-              </Form>
-            ))}
-          </div>
-        </PaginationItem>
-      )}
+      <PaginationItem>
+        <div className="flex gap-1">
+          {new Array(Math.min(last, 3)).fill(0).map((_, idx) => (
+            <Form action="/" key={idx}>
+              <input type="hidden" name="type" value={type} />
+              <div>
+                <input type="hidden" name="page" value={idx + page + 1} />
+                <PaginationLink isActive={page === idx + page + 1}>
+                  <button className="cursor-pointer" type="submit">
+                    {idx + page + 1}
+                  </button>
+                </PaginationLink>
+              </div>
+            </Form>
+          ))}
+        </div>
+      </PaginationItem>
       <PaginationItem>
         <Form action="/">
           <input type="hidden" name="type" value={type} />
           <input type="hidden" name="page" value={last} />
-          <Button type="submit" variant="secondary" className="cursor-pointer">
+          <Button type="submit" variant="outline" className="cursor-pointer">
             Last ({last})
           </Button>
         </Form>

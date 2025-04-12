@@ -95,7 +95,7 @@ export default async function Page({
                 alt={character.character.name}
                 className="rounded-md w-full object-cover aspect-[1/1.5]"
               />
-              <div className="absolute w-full left-0 bottom-0 bg-purple-600 text-white text-center rounded-xs p-2 h-[36px]">
+              <div className="absolute w-full left-0 bottom-0 bg-primary text-white text-center rounded-xs p-2 h-[36px]">
                 <span>{character.character.name}</span>
               </div>
             </div>
