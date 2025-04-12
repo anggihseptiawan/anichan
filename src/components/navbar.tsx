@@ -13,9 +13,10 @@ import {
 export const Navbar = () => (
   <div className="flex justify-between px-8 py-4">
     <div className="flex gap-12">
-      <span>Anichan</span>
+      <Link href="/">
+        <span className="font-bold">Anichan</span>
+      </Link>
       <nav className="flex gap-4">
-        <Link href="/browse">Browse</Link>
         <Link href="/genre">Genre</Link>
         <Link href="/recommendation">Recommendation</Link>
         <Link href="/review">Review</Link>
