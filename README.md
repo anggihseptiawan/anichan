@@ -35,7 +35,7 @@ npm run build
 
 Second, copy necessary files
 
-Running Standalone Next.js app is a bit different, we need to copy the /static dir to the /standalone dir. [https://nextjs.org/docs/pages/api-reference/config/next-config-js/output#automatically-copying-traced-files](more on this)
+Running Standalone Next.js app is a bit different, we need to copy the /static dir to the /standalone dir. [more on this](https://nextjs.org/docs/pages/api-reference/config/next-config-js/output#automatically-copying-traced-files)
 
 ```bash
 cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/
