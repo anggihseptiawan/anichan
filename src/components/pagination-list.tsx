@@ -41,7 +41,11 @@ export const PaginationList = ({
                 <PaginationLink
                   isActive={page === idx + Math.max(page - 3, 1) + 1}
                 >
-                  <button className="cursor-pointer" type="submit">
+                  <button
+                    className="cursor-pointer"
+                    type="submit"
+                    role="pagination-button"
+                  >
                     {idx + Math.max(page - 3, 1) + 1}
                   </button>
                 </PaginationLink>
