@@ -6,7 +6,7 @@ import { tryCatch } from "~/utils/tryCatch"
 
 export default async function Page() {
   const { data, error } = await tryCatch<APIResponse<AnimeDetail[]>>(
-    http<APIResponse<AnimeDetail[]>>(`schedules`).then((r) => r.data)
+    http<APIResponse<AnimeDetail[]>>(`seasons/upcoming`).then((r) => r.data)
   )
 
   if (error) return <p>Couldn&apos;t populate schedule!</p>
@@ -14,11 +14,10 @@ export default async function Page() {
   return (
     <div>
       <div className="sm:w-1/2 mx-auto text-center">
-        <h1 className="text-2xl font-semibold mb-2">Anime Schedule</h1>
+        <h1 className="text-2xl font-semibold mb-2">Upcoming Season</h1>
         <p>
-          Stay up-to-date with the current schedule of{" "}
-          {new Date().getFullYear()}. Never miss an episode of your favorite
-          shows!
+          Stay up-to-date with the upcoming anime. Never miss an episode of your
+          favorite shows!
         </p>
       </div>
       <div className="py-6">

@@ -12,6 +12,7 @@ import {
 } from "./ui/select"
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -81,8 +82,19 @@ export const Navbar = () => {
           <EllipsisIcon />
         </SheetTrigger>
         <SheetContent>
-          <SheetHeader>
+          <SheetHeader className="space-y-4">
             <SheetTitle>Menu</SheetTitle>
+            <div className="flex flex-col gap-2">
+              <SheetClose asChild>
+                <Link href="/genre">Genre</Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link href="/schedule">Schedule</Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link href="/season">Season</Link>
+              </SheetClose>
+            </div>
             <SearchForm />
           </SheetHeader>
         </SheetContent>
