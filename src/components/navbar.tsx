@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import { Input } from "./ui/input"
 import { EllipsisIcon, Search } from "lucide-react"
@@ -16,6 +17,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "~/components/ui/sheet"
+import { usePathname } from "next/navigation"
 
 const SearchForm = () => (
   <Form action="/search" className="flex flex-col sm:flex-row gap-2">
@@ -39,33 +41,52 @@ const SearchForm = () => (
   </Form>
 )
 
-export const Navbar = () => (
-  <div className="flex justify-between items-center px-8 py-4 bg-[#16042f] text-white">
-    <div className="flex gap-12">
-      <Link href="/">
-        <span className="text-xl font-bold tracking-tight text-primary">
-          Anichan
-        </span>
-      </Link>
-      <nav className="hidden md:flex gap-4">
-        <Link href="/genre">Genre</Link>
-        <Link href="/schedule">Schedule</Link>
-        <Link href="/season">Season</Link>
-      </nav>
+export const Navbar = () => {
+  const pathname = usePathname()
+
+  return (
+    <div className="flex justify-between items-center px-8 py-4 bg-[#16042f] text-white">
+      <div className="flex gap-12">
+        <Link href="/">
+          <span className="text-xl font-bold tracking-tight text-primary">
+            Anichan
+          </span>
+        </Link>
+        <nav className="hidden md:flex gap-4">
+          <Link
+            href="/genre"
+            className={`${pathname === "/genre" ? "text-primary" : ""}`}
+          >
+            Genre
+          </Link>
+          <Link
+            href="/schedule"
+            className={`${pathname === "/schedule" ? "text-primary" : ""}`}
+          >
+            Schedule
+          </Link>
+          <Link
+            href="/season"
+            className={`${pathname === "/season" ? "text-primary" : ""}`}
+          >
+            Season
+          </Link>
+        </nav>
+      </div>
+      <div className="hidden md:flex">
+        <SearchForm />
+      </div>
+      <Sheet>
+        <SheetTrigger className="md:hidden">
+          <EllipsisIcon />
+        </SheetTrigger>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle>Menu</SheetTitle>
+            <SearchForm />
+          </SheetHeader>
+        </SheetContent>
+      </Sheet>
     </div>
-    <div className="hidden md:flex">
-      <SearchForm />
-    </div>
-    <Sheet>
-      <SheetTrigger className="md:hidden">
-        <EllipsisIcon />
-      </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Menu</SheetTitle>
-          <SearchForm />
-        </SheetHeader>
-      </SheetContent>
-    </Sheet>
-  </div>
-)
+  )
+}
